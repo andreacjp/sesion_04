@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous" />
+        <link href="style.css" rel="stylesheet" />
+        <title>Introducción a la programación para el Diseño de interacción &#127959;</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js"></script>
+        <script>
+            var favoritismo = [
+                { lugar: 1, nombre: "Procesos y Prototipos I", motivo: "Me gustaron los trabajos que tuvimos que hacer, como crear un sistema gráfico basado en una canción" },
+                { lugar: 2, nombre: "Electivo Mención V y M: Diseño, afecto y género", motivo: "Me gustó que a pesar de ser un curso que pudo ser muy teórico, las actividades no lo fueron y analizamos series y películas que nosotres elegimos." },
+               /* { lugar: 3, nombre: "Nombre del curso", motivo: "Sed dignissim luctus erat eu scelerisque." },
+                { lugar: 4, nombre: "Nombre del curso", motivo: "Donec blandit ac lectus ac luctus." },
+                { lugar: 5, nombre: "Nombre del curso", motivo: "Praesent tristique lorem a mauris pharetra." },*/
+            ];
+            function setup() {
+                createCanvas(windowWidth, windowHeight).position(0, 0).style("z-index", -1).style("position", "fixed");
+                tabla();
+            }
+            function draw() {
+                colorMode(HSB, 360, 100, 100);
+                background(map(mouseX, 0, width, 360, 120), 50, 75);
+            }
+            function windowResized() {
+                resizeCanvas(windowWidth, windowHeight);
+            }
+            function tabla() {
+                favoritismo.forEach(function (e) {
+                    createElement("tr", '<th scope="row">' + e.lugar + "</th><td>" + e.nombre + "</td><td>" + e.motivo + "</td>").parent("pongale");
+                });
+            }
+        </script>
+    </head>
+    <body class="bg-dark">
+        <header class="container">
+            <div class="row">
+                <div class="col text-start"><h1 class="fs-4 pt-5 text-white">Bootstrap</h1></div>
+                <div class="col text-end"><h2 class="fs-5 pt-5 text-white-50">v5.1.1</h2></div>
+            </div>
+        </header>
+        <aside class="container">
+            <div class="row py-5">
+                <div class="col-sm-6 col-lg-3">
+                    <a target="_blank" href="https://www.collegefashion.net/wp-content/uploads/2019/01/aliceinwonderlandcover.webp" rel="noopener noreferrer">
+                        <img src="https://www.collegefashion.net/wp-content/uploads/2019/01/aliceinwonderlandcover.webp" class="shadow img-fluid" />
+                    </a>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                    <a target="_blank" href="https://cdn.shopify.com/s/files/1/1261/3345/products/cover-low-res_1024x.png?v=1531819734" rel="noopener noreferrer">
+                        <img src="https://cdn.shopify.com/s/files/1/1261/3345/products/cover-low-res_1024x.png?v=1531819734" class="shadow img-fluid" />
+                    </a>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                    <a target="_blank" href="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/63fc5679081483.5cb7f1e0aa619.png" rel="noopener noreferrer">
+                        <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/63fc5679081483.5cb7f1e0aa619.png" class="shadow img-fluid" />
+                    </a>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                    <a target="_blank" href="https://cronicasdemagrat.files.wordpress.com/2017/07/penguin2.jpg" rel="noopener noreferrer">
+                        <img src="https://cronicasdemagrat.files.wordpress.com/2017/07/penguin2.jpg" class="shadow img-fluid" />
+                    </a>
+                </div>
+            </div>
+        </aside>
+        <main class="container-fluid bg-light">
+            <div class="container">
+                <div class="row">
+                    <div class="col-11 col-sm-10 col-md-9 mx-auto mt-5">
+                        <p class="lead">
+                           Chapter I: Down the Rabbit-Hole
+                        </p>
+                        <p>
+                            Alice was beginning to get very tired of sitting by her sister on the bank, and of having nothing to do: once or twice she had peeped into the book her sister was reading, but it had no pictures or conversations in it, “and what is the use of a book,” thought Alice “without pictures or conversations?”
+
+So she was considering in her own mind (as well as she could, for the hot day made her feel very sleepy and stupid), whether the pleasure of making a daisy-chain would be worth the trouble of getting up and picking the daisies, when suddenly a White Rabbit with pink eyes ran close by her.
+                        </p>
+                    </div>
+                    <div class="col-12 my-3">
+                        <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                            </div>
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="https://img2.rtve.es/i/?w=1600&i=1449146647276.jpg" class="d-block w-100" alt="Deberían describirla a quien no la pueda ver" />
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="https://img2.rtve.es/im/3391882/?w=900" class="d-block w-100" alt="Deberían describirla a quien no la pueda ver" />
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="https://estaticos.muyinteresante.es/uploads/images/gallery/5743063c5bafe858568b45e2/alicia-alicia.jpg" class="d-block w-100" alt="Deberían describirla a quien no la pueda ver" />
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="https://fotos-proco.s3.eu-west-3.amazonaws.com/wp-content/uploads/2021/07/21190204/ilustraciones-de-alicia-en-el-pais-de-las-maravillas.jpg" class="d-block w-100" alt="Deberían describirla a quien no la pueda ver" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-11 col-sm-10 col-md-9 mx-auto mt-3 mb-5">
+                        <p>
+                            There was nothing so very remarkable in that; nor did Alice think it so very much out of the way to hear the Rabbit say to itself, “Oh dear! Oh dear! I shall be late!” (when she thought it over afterwards, it occurred to her that she ought to have wondered at this, but at the time it all seemed quite natural); but when the Rabbit actually took a watch out of its waistcoat-pocket, and looked at it, and then hurried on, Alice started to her feet, for it flashed across her mind that she had never before seen a rabbit with either a waistcoat-pocket, or a watch to take out of it, and burning with curiosity, she ran across the field after it, and fortunately was just in time to see it pop down a large rabbit-hole under the hedge.
+
+In another moment down went Alice after it, never once considering how in the world she was to get out again.
+
+The rabbit-hole went straight on like a tunnel for some way, and then dipped suddenly down, so suddenly that Alice had not a moment to think about stopping herself before she found herself falling down a very deep well.
+                        </p>
+                        <div class="table-responsive my-3">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">Asignatura</th>
+                                        <th scope="col">Motivo</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="pongale"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer class="container">
+            <div class="row">
+                <div class="col pt-4 pb-2">
+                    <!--reemplace los # por vínculo al repositorio o cuenta de GitHub correspondiente-->
+                    <p class="text-white small d-flex justify-content-between align-items-center"><a href="https://github.com/andreacjp" class="link-light">Andrea Jiménez</a> <a href="https://github.com/andreacjp/sesion_04" class="link-light">Sesión 04</a></p>
+                </div>
+            </div>
+        </footer>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+    </body>
+</html>
